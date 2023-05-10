@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "b5cb79da-0830-4cca-824b-7166a4a222c1",
+		"name": "Sobes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24210817"
+	},
+	"item": [
+		{
+			"name": "Authorization",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"qa.79935720@duotek.ru\",\n    \"password\": \"79935720\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api-test.duotek.ru/self/login",
+					"protocol": "http",
+					"host": [
+						"api-test",
+						"duotek",
+						"ru"
+					],
+					"path": [
+						"self",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateTocken",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "617|MbIdGBfLno0KpgAvsOi9YSRy2XnV5d665ynacsbg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Анастасия\",\n    \"phone\": \"11111111111\",\n    \"body\": \"Привет, как дела?\",\n    \"company_id\": 2,\n    \"ticketTypes\": [\"HELP\", \"ATTENTION\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api-test.duotek.ru/tickets/create",
+					"protocol": "http",
+					"host": [
+						"api-test",
+						"duotek",
+						"ru"
+					],
+					"path": [
+						"tickets",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTockenInfo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "617|MbIdGBfLno0KpgAvsOi9YSRy2XnV5d665ynacsbg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api-test.duotek.ru/tickets/info?id=3459",
+					"protocol": "http",
+					"host": [
+						"api-test",
+						"duotek",
+						"ru"
+					],
+					"path": [
+						"tickets",
+						"info"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3459"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
